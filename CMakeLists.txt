@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set the project name
-project(UnitTestPlayground VERSION 1.0)
+project(UnitTestPlayground)
 
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -14,3 +14,9 @@ include_directories(include)
 add_executable(${PROJECT_NAME} 
     src/main.cpp
 )
+
+# Add math library
+add_library(my_math_lib src/my_math.cpp)
+
+# Link the math library to the executable
+target_link_libraries(${PROJECT_NAME} my_math_lib)
