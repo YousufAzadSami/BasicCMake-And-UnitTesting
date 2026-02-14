@@ -10,6 +10,11 @@ project(UnitTestPlayground)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# This will generate a compile_commands.json file
+# Which will be used by clangd for IntelliSense
+# Reminder: clangd (not clang) is a language server
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Include DocTest for testing
 include(FetchContent)
 FetchContent_Declare(
